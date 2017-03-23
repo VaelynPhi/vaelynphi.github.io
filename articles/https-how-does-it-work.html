@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title id="pageTitle">HTTPS: how does it work? | Savant Idiot
+		</title>
+		<link rel="stylesheet" href="/css/vae-main.css" media="screen,print">
+		<link rel="stylesheet" href="/css/vae-print.css" media="print">
+		<link rel="stylesheet" href="/css/vae-blog.css" media="screen,print">
+	</head>
+	<body>
+		<nav id="menu">
+			<ul class="menuList">
+				<li><a class="itemLink" href="//www.vaelyn.com">Home</a></li>
+				<li><a class="itemLink" href="/" title="My blog.">Words</a></li>
+				<li><a class="itemLink" href="//www.vaelyn.com/projects.html">PHDs</a></li>
+				<li><a class="itemLink" href="//www.vaelyn.com/vitae.html">CV</a></li>
+			</ul>
+		</nav>
+		<div id="container">
+			<header id="pageHeader">
+				<h1 class="title corpus">Savant Idiot</h1>
+				<h2 class="title subtitle">HTTPS: how does it work? &because; <a rel="author">vaelynphi</a>
+					<time>@ 2014.05.14.12.15.46</time>
+				</h2>
+			</header>
+			<div id="corpus">
+				<article>
+					<section class="post-content"><p>HTTPS is built on SSL/TLS, both based on PKI. There are probably a billion explanations of SSL and PKI on the net, many of which are quite excellent. However, only a few of them discuss https as an implementation, which is what I intend to do here.</p>
+<p><span class="more"></span></p>
+<p>PKI (Public Key Infrastructure) is a system built on some simple principles. Naturally, logistics alone introduces many complications. There are a wide variety of techniques used for the various processes like key exchange. I will cover the most straightforward and possibly simplest of these.</p>
+<p>If you browse the internet, you’ve at some point probably been to a web site using a secured protocol (note “secured” rather than “secure”; I’ll get to that later). These sites show up in the browser address bar with the prefix https rather than http. The https protocol is basically the same as http, but it connects to the server differently. The first difference is that it connects on another port. If a web server program is listening on one port, it’s unusual (and usually impossible) to have another program listen on that same port. For this reason, most web servers run http on port 80 and https on port 443. When connecting to a site, www.example.com, <a href="http://www.example.com">http://www.example.com</a> implicitly means www.example.com:80 and <a href="https://www.example.com">https://www.example.com</a> implicitly means www.example.com:443.</p>
+<p>For http, a typical request looks something like this:</p>
+<pre><code class="lang-http"><span class="keyword">GET</span> <span class="string">/</span> HTTP/1.1
+</code></pre>
+<p>The response contains a header that looks something like this:</p>
+<pre><code class="lang-http">HTTP/1.1 <span class="number">200</span> OK
+<span class="attribute">Date</span>: Thu, 1 Jan 1970 00:00:00 UTC
+<span class="attribute">Server</span>: Apache/2.4.9 (Ubuntu)
+<span class="attribute">Content-Length</span>: 4
+<span class="attribute">Connection</span>: close
+<span class="attribute">Content-Type</span>: text/html
+</code></pre>
+<p>This is followed by the page you requested (ie, what you see when you click “view source” in the browser). When you’re using http, all of this is visible to anyone between you and the server you’re connecting to. Anyone can see content exchanged this way, including passwords and other possibly sensitive information. This is why we have https.</p>
+<p>A connection to the server with https begins with negotiation of keys. With a properly configured server, these keys are used once and then thrown away in what is called forward secrecy–after a certain period of time, new keys are used and anyone compromising your connection still cannot view data that was encrypted using the old keys. I’ll leave the details of the keys for another day, but the two key questions here are:</p>
+<ul>
+<li>How do we know who we’re connecting to is who they say they are?</li>
+<li>How do we agree on keys without someone seeing them?</li>
+</ul>
+<p>Both of these problems are solved with PKI in the form of certificates. The solution has its problems, however. The typical process for knowing who to trust is that you pick someone you know you can trust and they vouch for anyone else. Ironically, most people are unaware these entities, known as certificate authorities, even exist. When you visit a secured site, you received a public key from the server which is signed by a CA. Oh, but how do you know the CA’s signature? The CA’s public key (usually called certificate in this context) come pre-installed in your browser. So, your browser’s programmers decided who you can trust without even involving you! Once a certificate is signed by a CA whose own certificate is installed in your browser, when you visit the site associated with that certificate, your browser trusts the server is who it says it is. For this reason, installing a CA certificate can be dangerous, because it means you trust whoever runs that CA to only sign certificates for trustworthy servers.</p>
+<p>Once you have the certificate, though, encryption is somewhat trivial. The public key allows your browser to encrypt requests so that only the server can read them, and negotiated keys allow the server to send responses only your browser can read. Ideally, this uses forward secrecy, but not always.</p>
+<p>There are alternatives to CAs: accepting individual certificates only, regardless of who signed them, and accepting self-signed certificates. Both of these are safe if you can be sure they belong to the site you’re accepting them from, just as you can install a CA over the net as long as you have assurance that it’s the correct CA. The method for doing this involves looking at what’s called the fingerprint of the certificate (whether it’s a CA certificate or a server certificate). The fingerprint is a hash of the certificate; it’s possible for two certificates to have the same hash, but extremely unlikely. At least, the likelihood of two hashes being the same is low enough to consider comparing hashes a reasonable way of being sure the certificates are the same. IE, if you install a certificate with the same hash as the hash you have been supplied, it is extremely unlikely you have installed the wrong certificate. These fingerprints must be shared in a reliable way; preferably physically, in print or some other non-electronic way. I print the hash for my CA on my business cards.</p>
+<p>So, what’s the contrary case: ie, what do certificates and CAs protect us from? This is largely a matter of business, especially if you do online banking. If I visit my bank’s site, their server is using a certificate signed by a CA guaranteeing (one hopes!) they are indeed my bank. So when I send them my login credentials, I’m not accidentally compromising that information by sending it to a third party. The CA vouches for the server, and then the browser uses the server’s public key to encrypt communications between the browser and server. Without that signature as a guarantee, someone between the server and me could pose as the server and intercept even encrypted data.</p>
+<p>These features of https make it very difficult for a third party to listen in, intentionally or otherwise. For this reason, the connection may be regarded as secured: steps have been taken to make compromising the connection difficult, but it is still in principle possible, especially with powerful computing resources or special knowledge of the endpoints. Additionally, if the server or client is compromised, no amount of security in the connection will protect the data exchanged with either. No connection is secure, only secured, in this sense.</p>
+</section>
+				</article>
+			</div>
+			<footer id="pageFooter">Copyright &copy; 2000-2017 David Thomas | <a href="/licenses" title="License Information">License</a></footer>
+		</div>
+		<script type="text/javascript">
+			// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			// })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			
+			// ga('create', 'UA-77927918-1', 'auto');
+			// ga('send', 'pageview');
+			
+			document.querySelectorAll('.itemLink').forEach(function(link){ if(link.href == location.href) link.classList.add('hiddenCurrentLocation'); });
+			// document.getElementById('thisYear').innerHTML = (new Date()).getFullYear().toString();
+		</script>
+	</body>
+</html>

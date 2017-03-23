@@ -1,0 +1,57 @@
+@media print {
+
+	@page {
+		size: auto;
+		margin: 13mm 13mm 20mm 13mm;
+	}
+
+	#menu, footer, .contact-icons, .selectorContainer { display: none !important; }
+
+	body {
+		overflow-wrap: break-word;
+		overflow: auto;
+	}
+
+	a, a:visited, a:active, a:link { color: black; }
+
+	.skillsTip { background: black; }
+
+	#breakGoogle { display: inherit; }
+
+	.contact-text { visibility: visible !important; }
+
+	#contact { width: 25%; }
+	/*#contact-text { width: 25%; }*/
+	#portrait { width: 100px; height: 100px; }
+
+	.itemLink { float: none !important; }
+
+	#container {
+		width: 100%;
+		height: auto;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		overflow: auto !important;
+		background: white;
+		display: inline; /* odd, but fixes print issue with elements overflowing page */
+	}
+
+	#corpus {
+		width: auto;
+		height: auto;
+		position: relative;
+		padding: 0;
+		text-indent: 8pt;
+		margin-bottom: 0;
+		display: inline;
+	}
+
+	.projects { width: 90%; }
+
+	.nodivide {
+		page-break-inside: avoid;
+		break-inside: avoid;
+	}
+
+}

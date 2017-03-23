@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Savant Idiot</title>
+		<atom:link href="undefined/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+		<link></link>
+		<description>Converting Caffeine to Code since 1984</description>
+		<pubDate>Fri, 31 Mar 2017 19:50:00 -0400</pubDate>
+		<generator>Wintersmith - https://github.com/jnordberg/wintersmith</generator>
+		<language>en</language>
+		<item>
+			<title>The finest nothing available.</title>
+			<link>undefined/articles/wintersmith.html</link>
+			<pubDate>Fri, 31 Mar 2017 19:50:00 -0400</pubDate>
+			<guid isPermaLink="true">undefined/articles/wintersmith.html</guid>
+			<author></author>
+			<description>&lt;p&gt;Now using &lt;a href=&quot;https://github.com/jnordberg/wintersmith&quot; title=&quot;Wintersmith on Github&quot;&gt;Wintersmith&lt;/a&gt; and hosting on &lt;a href=&quot;https://help.github.com/categories/github-pages-basics/&quot; title=&quot;Github Pages&quot;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
+</description>
+		</item>
+		<item>
+			<title>How do you solve problems?</title>
+			<link>undefined/articles/how-do-you-solve-problems.html</link>
+			<pubDate>Mon, 08 Sep 2014 11:35:48 -0400</pubDate>
+			<guid isPermaLink="true">undefined/articles/how-do-you-solve-problems.html</guid>
+			<author></author>
+			<description>&lt;p&gt;The true answer is that you don’t. &lt;span class=&quot;more&quot;&gt;&lt;/span&gt;You’re always stuck with the same basic problems: how do I find food, water, breathable air, shelter, community… and so on. They don’t go away, you just trade one set of problems for a different set of problems. This remains true whether you’re talking about necessities like sustenance or frivolities like next season’s fashions.&lt;/p&gt;
+&lt;p&gt;Here’s how this works. Suppose you manage an organization growing out of the dark ages of technology. Everything used to be word-of-mouth or pen-and-paper, but with a couple hundred people this is no longer tenable. So, to replace your workflow you choose a piece of software that implements that workflow for the user as a distributed service accessible anywhere the appropriate infrastructure exists–in this case, anywhere there’s an internet connection and a computer. You’ve removed some problems from your list–great! An individual user’s workflow is enforced, so no more forgetting step 3. The information is available anywhere, so no more forgetting paper records, or having to wait two weeks while someone gropes through their filing cabinets for that report from three years ago. Also, it’s kept for you, so you don’t wind up losing whole swathes of records when someone’s basement gets flooded or they have an unfortunate oversight while moving.&lt;/p&gt;
+&lt;p&gt;But I’m misguiding you here, and anyone who’s ever dealt with backup knows it. Sure, that information is kept safely on the server, but with what kind of backups? How regular are they? How easily are they restored? Backup shows a major hole in the new organizational structure because it highlights that you’ve replaced your old set of problems–house/office fires, floods, forgetfulness–with a new, digital set. It’s obvious why anyone would do this, because the digital problems are easier to deal with. I can prevent or at least reduce loss of carbon copy information the same way I can prevent loss of digital information: diligence. But a fire has avenues I can’t easily prevent. Digital data loss has even fewer avenues that can’t be prevented, and it’s possible to patch those so thoroughly as to never lose data. At least, not unless our civilization collapses entirely, in which case you’re probably going to be less concerned with last week’s financial report anyhow.&lt;/p&gt;
+&lt;p&gt;In the case of data and workflow, going electronic is a pretty good trade for anyone. However, there are problems where either tradeoff makes sense depending on who’s doing it. Open Source vs Proprietary, for instance, represents a dichotomy where either branch carries a set of problems amenable to different types of people. Some of us can be bothered with occasionally diving into code to fix something. Some of us would rather wait for the coders to fix it either because we don’t know how or because we don’t have the time. (Actually, the former breaks down into not having the time anyway.)&lt;/p&gt;
+&lt;p&gt;But why am I splitting hairs? If problem solving consists of trading a set of problems for a more manageable set, doesn’t that count? What’s wrong with just thinking of the problem as solved?&lt;/p&gt;
+&lt;p&gt;Well, it’s all in the words to a degree. The word solve dissolves into Greek meaning “to untie” and is related to the English word loose. So you’ve loosened your problems, figuratively. The temptation is to scrub them from the list entirely and pretend they’ve gone away. However, it’s most rational to replace them with the new problems you’ve accepted. They’re higher-level problems, more abstract, and perhaps more manageable if you’ve chosen a good solution. But if it’s non-obvious why one must pedantically track problem exchange, let’s consider a bad solution.&lt;/p&gt;
+&lt;p&gt;Let’s consider our old friend backup again. Suppose your previously did digital backups, but after the carbon-copy fashion, as was common before the internet made it easy for us to move data around without sneakernet. Every week your users copy their files to a floppy disk that is studiously passed mailroom style back to IT for filing away. This is little better than paper, except that the data density is way higher. Assuming that you’re not backing up more than could be printed out in a report, you’ve just increased the expense of backup. You still have the same problems, except that your users have a new process to learn, and some people will take longer to deal with this. Opting for this kind of backup in this day and age is ridiculous, but not unheard of. I used to do IT for a small company that burned their database backups to CD every week instead of just dumping them into something like Dropbox. (Or an Amazon Bucket as I had recommended.)&lt;/p&gt;
+&lt;p&gt;This is a simple example, and frankly there are probably better ones, but they require more backstory and explanation. The bottom line is that keeping the notion of problem exchange in mind helps keep the evaluation of new systems honest. Does our solution really simplify the problems we have? Does it actually trade any of them at all, or just change their context? A good solution will remove all the problems it addresses and replace them with fewer problems which are each themselves easier to handle. Sometimes this isn’t easy to see from Mount Solution. Our modern agricultural system has many problems, but people who live under it starving isn’t one of them. (If anything, the major question there is why our food surplus still leaves people outside of it starving when we produce more than enough to feed them, but that’s a different question about modern civilization.)&lt;/p&gt;
+&lt;p&gt;There is also the temptation of management to ignore the new problems since the old ones are gone. This is part of how bad code gets written. If those old problems are removed from the board, the issue is considered gone entirely. We already paid to solve that problem last quarter–why do we need to put any more money into it this quarter? It’s this kind of thinking that I’m hoping to eliminate. We’re always climbing the hierarchy of problems, trading them out for better sets. We can’t ever solve our problems, just bootstrap ourselves into better ones.&lt;/p&gt;
+</description>
+		</item>
+		<item>
+			<title>Site… ever?</title>
+			<link>undefined/articles/site-ever.html</link>
+			<pubDate>Wed, 03 Sep 2014 12:49:59 -0400</pubDate>
+			<guid isPermaLink="true">undefined/articles/site-ever.html</guid>
+			<author></author>
+			<description>&lt;p&gt;Well, I’ve finished (read “too tired to do more with”) the WordPress theme to make the blog look like the rest of the site. I rather like how it turned out. (I can say that since, even though the exactly visual is presumably entirely under my control, my daily ability in manipulating it may vary…) And the CV is up to date and fancy, and has descriptions added now, and my new project. The front page actually has something remotely like content, and… I need to actually add some projects to the projects page, and add actual text that isn’t Lorem Ipsum.&lt;/p&gt;
+&lt;p&gt;Well, it’s half done. Like always.&lt;/p&gt;
+</description>
+		</item>
+		<item>
+			<title>HTTPS: how does it work?</title>
+			<link>undefined/articles/https-how-does-it-work.html</link>
+			<pubDate>Wed, 14 May 2014 08:15:46 -0400</pubDate>
+			<guid isPermaLink="true">undefined/articles/https-how-does-it-work.html</guid>
+			<author></author>
+			<description>&lt;p&gt;HTTPS is built on SSL/TLS, both based on PKI. There are probably a billion explanations of SSL and PKI on the net, many of which are quite excellent. However, only a few of them discuss https as an implementation, which is what I intend to do here.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;more&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;PKI (Public Key Infrastructure) is a system built on some simple principles. Naturally, logistics alone introduces many complications. There are a wide variety of techniques used for the various processes like key exchange. I will cover the most straightforward and possibly simplest of these.&lt;/p&gt;
+&lt;p&gt;If you browse the internet, you’ve at some point probably been to a web site using a secured protocol (note “secured” rather than “secure”; I’ll get to that later). These sites show up in the browser address bar with the prefix https rather than http. The https protocol is basically the same as http, but it connects to the server differently. The first difference is that it connects on another port. If a web server program is listening on one port, it’s unusual (and usually impossible) to have another program listen on that same port. For this reason, most web servers run http on port 80 and https on port 443. When connecting to a site, www.example.com, &lt;a href=&quot;http://www.example.com&quot;&gt;http://www.example.com&lt;/a&gt; implicitly means www.example.com:80 and &lt;a href=&quot;https://www.example.com&quot;&gt;https://www.example.com&lt;/a&gt; implicitly means www.example.com:443.&lt;/p&gt;
+&lt;p&gt;For http, a typical request looks something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-http&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;GET&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;/&lt;/span&gt; HTTP/1.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The response contains a header that looks something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;lang-http&quot;&gt;HTTP/1.1 &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt; OK
+&lt;span class=&quot;attribute&quot;&gt;Date&lt;/span&gt;: Thu, 1 Jan 1970 00:00:00 UTC
+&lt;span class=&quot;attribute&quot;&gt;Server&lt;/span&gt;: Apache/2.4.9 (Ubuntu)
+&lt;span class=&quot;attribute&quot;&gt;Content-Length&lt;/span&gt;: 4
+&lt;span class=&quot;attribute&quot;&gt;Connection&lt;/span&gt;: close
+&lt;span class=&quot;attribute&quot;&gt;Content-Type&lt;/span&gt;: text/html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is followed by the page you requested (ie, what you see when you click “view source” in the browser). When you’re using http, all of this is visible to anyone between you and the server you’re connecting to. Anyone can see content exchanged this way, including passwords and other possibly sensitive information. This is why we have https.&lt;/p&gt;
+&lt;p&gt;A connection to the server with https begins with negotiation of keys. With a properly configured server, these keys are used once and then thrown away in what is called forward secrecy–after a certain period of time, new keys are used and anyone compromising your connection still cannot view data that was encrypted using the old keys. I’ll leave the details of the keys for another day, but the two key questions here are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How do we know who we’re connecting to is who they say they are?&lt;/li&gt;
+&lt;li&gt;How do we agree on keys without someone seeing them?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both of these problems are solved with PKI in the form of certificates. The solution has its problems, however. The typical process for knowing who to trust is that you pick someone you know you can trust and they vouch for anyone else. Ironically, most people are unaware these entities, known as certificate authorities, even exist. When you visit a secured site, you received a public key from the server which is signed by a CA. Oh, but how do you know the CA’s signature? The CA’s public key (usually called certificate in this context) come pre-installed in your browser. So, your browser’s programmers decided who you can trust without even involving you! Once a certificate is signed by a CA whose own certificate is installed in your browser, when you visit the site associated with that certificate, your browser trusts the server is who it says it is. For this reason, installing a CA certificate can be dangerous, because it means you trust whoever runs that CA to only sign certificates for trustworthy servers.&lt;/p&gt;
+&lt;p&gt;Once you have the certificate, though, encryption is somewhat trivial. The public key allows your browser to encrypt requests so that only the server can read them, and negotiated keys allow the server to send responses only your browser can read. Ideally, this uses forward secrecy, but not always.&lt;/p&gt;
+&lt;p&gt;There are alternatives to CAs: accepting individual certificates only, regardless of who signed them, and accepting self-signed certificates. Both of these are safe if you can be sure they belong to the site you’re accepting them from, just as you can install a CA over the net as long as you have assurance that it’s the correct CA. The method for doing this involves looking at what’s called the fingerprint of the certificate (whether it’s a CA certificate or a server certificate). The fingerprint is a hash of the certificate; it’s possible for two certificates to have the same hash, but extremely unlikely. At least, the likelihood of two hashes being the same is low enough to consider comparing hashes a reasonable way of being sure the certificates are the same. IE, if you install a certificate with the same hash as the hash you have been supplied, it is extremely unlikely you have installed the wrong certificate. These fingerprints must be shared in a reliable way; preferably physically, in print or some other non-electronic way. I print the hash for my CA on my business cards.&lt;/p&gt;
+&lt;p&gt;So, what’s the contrary case: ie, what do certificates and CAs protect us from? This is largely a matter of business, especially if you do online banking. If I visit my bank’s site, their server is using a certificate signed by a CA guaranteeing (one hopes!) they are indeed my bank. So when I send them my login credentials, I’m not accidentally compromising that information by sending it to a third party. The CA vouches for the server, and then the browser uses the server’s public key to encrypt communications between the browser and server. Without that signature as a guarantee, someone between the server and me could pose as the server and intercept even encrypted data.&lt;/p&gt;
+&lt;p&gt;These features of https make it very difficult for a third party to listen in, intentionally or otherwise. For this reason, the connection may be regarded as secured: steps have been taken to make compromising the connection difficult, but it is still in principle possible, especially with powerful computing resources or special knowledge of the endpoints. Additionally, if the server or client is compromised, no amount of security in the connection will protect the data exchanged with either. No connection is secure, only secured, in this sense.&lt;/p&gt;
+</description>
+		</item>
+		<item>
+			<title>And now for something completely the same.</title>
+			<link>undefined/articles/and-now-for-something-completely-the-same.html</link>
+			<pubDate>Tue, 29 Apr 2014 11:00:15 -0400</pubDate>
+			<guid isPermaLink="true">undefined/articles/and-now-for-something-completely-the-same.html</guid>
+			<author></author>
+			<description>&lt;p&gt;Welcome to life, Irken child; report for duty.&lt;/p&gt;
+</description>
+		</item>
+	</channel>
+</rss>

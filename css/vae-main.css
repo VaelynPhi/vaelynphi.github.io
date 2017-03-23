@@ -1,0 +1,109 @@
+
+@font-face {
+	font-family: "Linux Biolinum";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Linux Biolinum"), local("LinuxBiolinum"), url(fonts/LinBiolinum_R.woff) format("woff");
+}
+
+html { height: 100%; }
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: black; /* Overall background color */
+	font-size: 16px;
+	font-family: "Linux Biolinum", "Liberation Sans", "Inconsolata", sans-serif;
+	min-width: 1000px;
+}
+
+#container {
+	width: 80%;
+	min-width: 800px;
+	min-height: 100%;
+	position: relative;
+	margin: 0 auto;
+	overflow: auto;
+	background: #f7f6f3; /* Central column background. default: white */
+}
+
+#corpus {
+	width: 100%;
+	min-height: 100%;
+	overflow: auto;
+	margin-bottom: 2.75em;
+	padding: .5em 0;
+	text-indent: 1em;
+}
+
+#pageHeader {
+	height: 3em;
+	padding: .5em 0 0 1.25em;
+	border-bottom: .25em solid #000;
+}
+
+.title {
+	font-size: 2.5em;
+	display: inline;
+	font-weight: normal;
+}
+.subtitle:before { content: ": "; }
+.subtitle { font-size: 1.5em; margin-left: 1em; }
+
+#pageFooter {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	border-top: .25em solid black;
+	margin: 0;
+	padding: .5em 0;
+	text-indent: 1.75em;
+	overflow: hidden;
+}
+
+#menu {
+	width: 100%;
+	position: relative;
+	top: 3.75em;
+}
+
+.menuList {
+	position: absolute;
+	right: 90%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.itemLink {
+	font-size: 1.2em;
+	font-weight: bold;
+	display: inline;
+	float: right;
+	margin: 1px 0 0 0;
+	padding: .3em .6em;
+	text-align: center;
+	background: lightgray;
+	color: black;
+	text-decoration: none;
+	border: 0;
+	border-radius: .65em 0 0 .65em;
+	outline: none;
+}
+
+.itemLink:hover {
+	background: gray;
+	color: white;
+	font-weight: bold;
+	outline: none;
+}
+
+.hiddenCurrentLocation { display: none; }
+
+.lumpText {
+	font-size: 1.1em;
+	margin: .5em 2em;
+	text-indent: 3em;
+}
