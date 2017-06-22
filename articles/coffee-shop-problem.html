@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title id="pageTitle">The Coffee Shop Problem | Savant Idiot
+		</title>
+		<link rel="stylesheet" href="/css/vae-main.css" media="screen,print">
+		<link rel="stylesheet" href="/css/vae-print.css" media="print">
+		<link rel="stylesheet" href="/css/vae-blog.css" media="screen,print">
+	</head>
+	<body>
+		<nav id="menu">
+			<ul class="menuList">
+				<li><a class="itemLink" href="//www.vaelyn.com">Home</a></li>
+				<li><a class="itemLink" href="/" title="My blog.">Words</a></li>
+				<li><a class="itemLink" href="//www.vaelyn.com/projects.html">PHDs</a></li>
+				<li><a class="itemLink" href="//www.vaelyn.com/vitae.html">CV</a></li>
+			</ul>
+		</nav>
+		<div id="container">
+			<header id="pageHeader">
+				<h1 class="title corpus">Savant Idiot</h1>
+				<h2 class="title subtitle">The Coffee Shop Problem &because; <a rel="author">vaelynphi</a>
+					<time>@ 2017.06.22.18.54.59</time>
+				</h2>
+			</header>
+			<div id="corpus">
+				<article>
+					<section class="post-content"><p>Coffee shops, and businesses that provide wireless internet in general, often have this one common clickbaity headline as a problem…</p>
+<p><span class="more"></span></p>
+<p>Effing DHCP. Or is IPv4 to blame?</p>
+<p>It’s a pretty common setup for home routers to have ip addresses that start with the prefix 192.168 and end in x.1; this subnet, 192.168.x.0/24 has been reserved for private networks–those behind a NAT–for ages. Its use for consumer routers is largely idiosyncratic. When the internet was being divided into address spaces, 192.168.x.0/24 just happend to be an available space. So most routers come with it as the default subnet, with the router at .1, .0 and .255 reserved, and thus 253 usable addresses.</p>
+<p>Or at least that would be more sensible. Instead you usually get 50-100, depending on the defaults from the manufacturer. So of those 253 available addresses, your router only hands out as little as a fifth of them. And, due to the nature of DHCP (that’s how your router hands out addresses, typically), those devices hold onto those addresses for 24 hours. And this is all well and good for home networking, where even techies might have tens of devices (and anyone with more is liable to fiddle with their router’s settings anyhow). But for public spaces and businesses, this is possibly the worst configuration available.</p>
+<p>Simple math: 50 addresses for 24 hours, so (assuming the DHCP cache is empty), the first 50 devices into your coffee shop (for example) get addresses, which the router thinks they have for the next day. The 51st device has to wait for that first lease to expire. With no address, the device can’t communicate, and you’re left with people coming in for wifi and complaining that it isn’t working, and your employees (and possibly you) wind up rebooting the router like it’s broken–which does “fix” the problem in that all those DHCP leases are flushed and new devices can connect, until 50 more (or 100 if that’s the default) fill in and you’re back to square one.</p>
+<p>So the super technical solution? Widen the range of addresses handed out (no reason not to have .10-.250 available for DHCP) and shorten the DHCP lease from 86400 seconds (or 24 hours) to something like 14400 or even 7200 (4 and 2 hours). Anyone in the shop longer will generally keep their address–DHCP will just cause the address to renew earlier. And someone who stops in at open for coffee and is there on a phone for ten minutes won’t clog up an address in perpetuity (after all, if their lease lasts until the next day, they could hypothetically come in just in time to renew it, effectively keeping an ip address forever when they’re only connected for a few minutes each day).</p>
+<p>Of course, there are larger private subnets, like 10.0.0.0/8 (10.0.0.0-10.255.255.255 or 2^24 addresses) which used to belong to ARPAnet and could be easier to type and provide lots more room for expansion. There’s also 172.16.0.0/12 which the least said about, the better.</p>
+<p>Also IPv4 gives out 32 bit addresses (thus the form with four 8 bit numbers), but IPv6 gives out 128 bit addresses (that’s something like 3.4 x 10^38 addresses). So, classically, IPv4 has relied on NATs, where the networks behind your NAT on private subnets don’t communicate directly with other private subnets, so both you and your neighbor might both have routers handing out 192.168.1.0/24 subnet addresses, but since they’re behind routers with external addresses like 62.1.1.4 and 62.1.1.5 (assuming here a really, really contiguous method of handing out these addresses), it doesn’t matter that devices on your network have the same addresses as devices on your neighbor’s network. This is kind of like how different zip codes can have the same street addresses. However, IPv6 has enough addresses that every person on earth could have nearly ten million trillion 32 bit (IPv4 style) internets personally… so NAT will no longer be necessary and everything can be uniquely addressed. And maybe coffee shops will stop running out of addresses to hand out.</p>
+</section>
+				</article>
+			</div>
+			<footer id="pageFooter">Copyright &copy; 2000-2017 David Thomas | <a href="/licenses" title="License Information">License</a></footer>
+		</div>
+		<script type="text/javascript">
+			// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			// })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			
+			// ga('create', 'UA-77927918-1', 'auto');
+			// ga('send', 'pageview');
+			
+			document.querySelectorAll('.itemLink').forEach(function(link){ if(link.href == location.href) link.classList.add('hiddenCurrentLocation'); });
+			// document.getElementById('thisYear').innerHTML = (new Date()).getFullYear().toString();
+		</script>
+	</body>
+</html>
